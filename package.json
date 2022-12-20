@@ -1,0 +1,19 @@
+{
+  "name": "karaz_erp",
+  "version": "1.0.0",
+  "description": "real estate management system",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godofred027/erp_karaz.git"
+  },
+  "author": "Godofred027",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godofred027/erp_karaz/issues"
+  },
+  "homepage": "https://github.com/Godofred027/erp_karaz#readme"
+}
