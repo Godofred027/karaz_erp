@@ -1,32 +1,32 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const Seller = sequelize.define("seller", {
+export const Client = sequelize.define("client", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  names: {
+  name: {
     type: DataTypes.STRING(80),
     allowNull: false,
   },
-  last_names: {
+  lastname: {
     type: DataTypes.STRING(80),
     allowNull: false,
   },
   document: {
-    type: DataTypes.STRING(45),
+    type: DataTypes.STRING(20),
     allowNull: false,
+    unique: true,
   },
   email: {
-    type: DataTypes.STRING(255),
+    type: DataTypes.STRING(80),
+    allowNull: false,
+    unique: true,
   },
   phone: {
     type: DataTypes.STRING(20),
     allowNull: false,
-  },
-  account_number: {
-    type: DataTypes.STRING(50),
   },
 });
