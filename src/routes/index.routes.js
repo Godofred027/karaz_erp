@@ -3,7 +3,7 @@ import {
   getIndex,
   getIndexApi,
   getIndexApiVersion,
-} from "../controllers/index.controllers.js";
+} from "../controllers/index.controller.js";
 import config from "../config.js";
 
 const router = Router();

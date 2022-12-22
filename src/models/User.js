@@ -30,7 +30,7 @@ export const User = sequelize.define(
     },
     date_of_birth: {
       type: DataTypes.DATE,
-      dafaultValue: DataTypes.NOW,
+      defaultValue: DataTypes.NOW,
     },
   },
   {

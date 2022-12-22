@@ -3,15 +3,20 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default {
-  //app settings
+  //app config
   APP_PORT: process.env.APP_PORT || 3000,
   APP_HOST: process.env.APP_HOST || "localhost",
+  //app datails
   APP_NAME: process.env.APP_NAME,
   APP_VERSION: process.env.APP_VERSION,
   APP_DESCRIPTION: process.env.APP_DESCRIPTION,
   APP_AUTHOR: process.env.APP_AUTHOR,
   APP_AUTHOR_EMAIL: process.env.APP_AUTHOR_EMAIL,
   APP_URL: process.env.APP_URL,
+  //user admin
+  APP_USER: process.env.APP_USER,
+  APP_MAIL: process.env.APP_MAIL,
+  APP_PASS: process.env.APP_PASS,
   //database settings
   DB_USER: process.env.DB_USER,
   DB_PASS: process.env.DB_PASS,
