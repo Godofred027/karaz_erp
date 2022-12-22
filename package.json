@@ -3,17 +3,35 @@
   "version": "1.0.0",
   "description": "real estate management system",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Godofred027/erp_karaz.git"
+    "url": "git+https://github.com/Godofred027/karaz_erp.git"
   },
   "author": "Godofred027",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Godofred027/erp_karaz/issues"
+    "url": "https://github.com/Godofred027/karaz_erp/issues"
   },
-  "homepage": "https://github.com/Godofred027/erp_karaz#readme"
+  "homepage": "https://github.com/Godofred027/karaz_erp#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
