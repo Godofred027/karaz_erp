@@ -1,4 +1,19 @@
 import { User } from "../models/user.js";
+import multer from "multer";
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "src/uploads/profilePictures/");
+  },
+
+  filename: function (req, file, cb) {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+export const uploadProfilePictures = upload.single("profilePictures");
 
 export const getUsers = async (req, res) => {
   try {
@@ -13,6 +28,7 @@ export const createUser = async (req, res) => {
   try {
     const { username, password, email, names, lastnames, date_of_birth } =
       req.body;
+    const profile_picture = req.file.filename;
     let newUser = await User.create({
       username,
       password,
@@ -20,6 +36,7 @@ export const createUser = async (req, res) => {
       names,
       lastnames,
       date_of_birth,
+      profile_picture,
     });
     res.status(201).json({
       message: "User created successfully",
@@ -56,7 +73,6 @@ export const updateUser = async (req, res) => {
     }
     user.set(req.body);
     await user.save();
-    console.log(req.body);
     res.status(200).json(user);
   } catch (error) {
     res.status(500).json(error);

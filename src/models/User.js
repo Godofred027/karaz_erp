@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
+import { Role } from "./role.js";
 
 export const User = sequelize.define(
   "user",
@@ -32,8 +33,14 @@ export const User = sequelize.define(
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
+    profile_picture: {
+      type: DataTypes.STRING(255),
+    },
   },
   {
     timestamps: true,
   }
 );
+
+Role.hasMany(User, { foreignKey: "role_id", sourceKey: "id" });
+User.belongsTo(Role, { foreignKey: "role_id", targetId: "id" });

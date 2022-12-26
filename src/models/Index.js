@@ -18,13 +18,6 @@ import { User } from "./User.js";
 import { Voucher_sale } from "./Voucher_sale.js";
 import { Voucher_seller } from "./Voucher_seller.js";
 
-// user relation
-Role.hasMany(User, { foreignKey: "role_id", sourceKey: "id" }); //de donde sale
-User.belongsTo(Role, {
-  foreignKey: "role_id",
-  targetId: "id",
-}); // a donde va
-
 // voucher_sale relation
 Sale.hasMany(Voucher_sale, { foreignKey: "sale_id", sourceKey: "id" });
 Voucher_sale.belongsTo(Sale, { foreignKey: "sale_id", targetId: "id" });

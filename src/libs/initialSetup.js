@@ -22,13 +22,14 @@ export const createRoles = async () => {
 export const createAdmin = async () => {
   try {
     const user = await User.findOne({ where: { email: config.APP_MAIL } });
+    console.log(user);
     if (user) return;
     const newUser = await Promise.all(
       User.create({
         username: config.APP_USER,
         email: config.APP_MAIL,
         password: config.APP_PASS,
-        role: 3,
+        role_id: 3,
       })
     );
     console.log(newUser);
