@@ -24,7 +24,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: pm2 delete erp   
     - run: npm i
-    - run: pm2 start src/index.js --name erp
-    - run: pm2 restart erp
+    - run: npm run start
