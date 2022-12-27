@@ -5,7 +5,7 @@ import "./models/Index.js";
 
 app.listen(app.get("port"), async () => {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     console.log("Database connected");
     console.log("Runing server on port", app.get("port"));
     console.log(
