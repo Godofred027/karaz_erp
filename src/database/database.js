@@ -7,6 +7,6 @@ export const sequelize = new Sequelize(
   config.DB_PASS,
   {
     host: config.DB_HOST,
-    dialect: config.DB_TYPE,
+    dialect: "postgres",
   }
 );
