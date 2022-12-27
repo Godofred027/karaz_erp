@@ -1,7 +1,7 @@
 import { Bank } from "./Bank.js";
 import { Bill } from "./Bill.js";
 import { Cash_or_credit } from "./Cash_or_credit.js";
-import { Client } from "./client.js";
+import { Client } from "./Client.js";
 import { Document_project } from "./Document_project.js";
 import { Investor } from "./Investor.js";
 import { Paid_seller } from "./Paid_seller.js";

@@ -43,3 +43,5 @@ app.use(`/api/${config.API_VERSION}/documents`, documentsRouter);
 app.use("/public", express.static(join(__filename, "/uploads")));
 //export
 export default app;
+
+//test runner
