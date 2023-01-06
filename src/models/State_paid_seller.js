@@ -11,6 +11,7 @@ export const State_paid_seller = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

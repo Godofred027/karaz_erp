@@ -11,6 +11,7 @@ export const Type_sale = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

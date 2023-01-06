@@ -11,6 +11,7 @@ export const State_investor = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

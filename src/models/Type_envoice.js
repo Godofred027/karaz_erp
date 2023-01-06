@@ -11,6 +11,7 @@ export const Type_envoice = sequelize.define(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {

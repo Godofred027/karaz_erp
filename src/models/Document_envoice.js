@@ -16,6 +16,7 @@ export const Document_envoice = sequelize.define(
     },
     url_document: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
