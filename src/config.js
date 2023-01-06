@@ -28,4 +28,14 @@ export default {
   API_PORT: process.env.API_PORT,
   API_HOST: process.env.API_HOST,
   API_VERSION: process.env.API_VERSION,
+  //jwt settings
+  JWT_SECRET: process.env.JWT_SECRET,
+  JWT_REFRESH: process.env.JWT_REFRESH,
+  //enviroment
+  IS_DEV: process.env.IS_DEV,
+  //frontend urls
+  FRONTEND_URL_1: process.env.FRONTEND_URL_1,
+  FRONTEND_URL_2: process.env.FRONTEND_URL_2,
+  FRONTEND_URL_3: process.env.FRONTEND_URL_3,
+  FRONTEND_URL_4: process.env.FRONTEND_URL_4,
 };
