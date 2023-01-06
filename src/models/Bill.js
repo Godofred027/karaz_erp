@@ -15,11 +15,9 @@ export const Bill = sequelize.define("bill", {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   },
-  envoice_document: {
-    type: DataTypes.STRING,
-  },
   envoice_date: {
     type: DataTypes.DATE,
     allowNull: false,
+    defaultValue: DataTypes.NOW,
   },
 });

@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const Bank = sequelize.define(
-  "bank",
+export const Document_envoice = sequelize.define(
+  "document_envoice",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,6 +11,10 @@ export const Bank = sequelize.define(
       allowNull: false,
     },
     name: {
+      type: DataTypes.STRING(80),
+      allowNull: false,
+    },
+    url_document: {
       type: DataTypes.STRING,
     },
   },

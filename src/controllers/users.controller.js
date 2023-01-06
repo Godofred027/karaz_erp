@@ -7,20 +7,21 @@ const storage = multer.diskStorage({
   },
 
   filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-${file.originalname}`);
+    req.namefile = `picture-${Date.now()}.${file.mimetype.split("/")[1]}`;
+    cb(null, req.namefile);
   },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
-export const uploadProfilePictures = upload.single("profilePictures");
+export const uploadProfilePictures = upload.single("picture");
 
 export const getUsers = async (req, res) => {
   try {
     const users = await User.findAll();
     res.status(200).json(users);
   } catch (error) {
-    console.error(error);
+    res.status(500).json(error);
   }
 };
 
@@ -28,8 +29,12 @@ export const createUser = async (req, res) => {
   try {
     const { username, password, email, names, lastnames, date_of_birth } =
       req.body;
-    const profile_picture = req.file.filename;
-    let newUser = await User.create({
+    const profile_picture = `https://api.aibrkaraz.com/public/profilePictures/${req.namefile}`;
+    const user = await User.findOne({ where: { username } });
+    if (user) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+    const newUser = await User.create({
       username,
       password,
       email,

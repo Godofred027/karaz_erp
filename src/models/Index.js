@@ -1,6 +1,6 @@
 import { Bank } from "./Bank.js";
 import { Bill } from "./Bill.js";
-import { Cash_or_credit } from "./Cash_or_credit.js";
+import { Type_sale } from "./Type_sale.js";
 import { Client } from "./Client.js";
 import { Document_project } from "./Document_project.js";
 import { Investor } from "./Investor.js";
@@ -17,6 +17,10 @@ import { Type_seller } from "./Type_seller.js";
 import { User } from "./User.js";
 import { Voucher_sale } from "./Voucher_sale.js";
 import { Voucher_seller } from "./Voucher_seller.js";
+import { Document_investor } from "./Document_investor.js";
+import { Document_selles } from "./Document_sellers.js";
+import { Document_sale } from "./Document_sale.js";
+import { Document_envoice } from "./Document_envoice.js";
 
 // voucher_sale relation
 Sale.hasMany(Voucher_sale, { foreignKey: "sale_id", sourceKey: "id" });
@@ -27,12 +31,12 @@ Seller.hasMany(Voucher_seller, { foreignKey: "seller_id", sourceKey: "id" });
 Voucher_seller.belongsTo(Seller, { foreignKey: "seller_id", targetId: "id" });
 
 // sales relation
-Cash_or_credit.hasMany(Sale, {
-  foreignKey: "cash_or_credit_id",
+Type_sale.hasMany(Sale, {
+  foreignKey: "type_sale_id",
   sourceKey: "id",
 });
-Sale.belongsTo(Cash_or_credit, {
-  foreignKey: "cash_or_credit_id",
+Sale.belongsTo(Type_sale, {
+  foreignKey: "type_sale_id",
   targetId: "id",
 });
 
@@ -117,5 +121,45 @@ Project.hasMany(Document_project, {
 });
 Document_project.belongsTo(Project, {
   foreignKey: "project_id",
+  targetId: "id",
+});
+
+// document_investor relation
+Investor.hasMany(Document_investor, {
+  foreignKey: "investor_id",
+  sourceKey: "id",
+});
+Document_investor.belongsTo(Investor, {
+  foreignKey: "investor_id",
+  targetId: "id",
+});
+
+// document_selles relation
+Sale.hasMany(Document_selles, {
+  foreignKey: "sale_id",
+  sourceKey: "id",
+});
+Document_selles.belongsTo(Sale, {
+  foreignKey: "sale_id",
+  targetId: "id",
+});
+
+// document_sale relation
+Sale.hasMany(Document_sale, {
+  foreignKey: "sale_id",
+  sourceKey: "id",
+});
+Document_sale.belongsTo(Sale, {
+  foreignKey: "sale_id",
+  targetId: "id",
+});
+
+// document_envoice relation
+Bill.hasMany(Document_envoice, {
+  foreignKey: "bill_id",
+  sourceKey: "id",
+});
+Document_envoice.belongsTo(Bill, {
+  foreignKey: "bill_id",
   targetId: "id",
 });

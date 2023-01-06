@@ -34,10 +34,6 @@ export const Investor = sequelize.define("investor", {
   date_of_birth: {
     type: DataTypes.DATE,
   },
-  document: {
-    type: DataTypes.STRING(20),
-    allowNull: false,
-  },
   phone: {
     type: DataTypes.STRING(20),
     allowNull: false,

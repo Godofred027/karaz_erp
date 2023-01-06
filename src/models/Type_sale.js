@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const Cash_or_credit = sequelize.define(
-  "cash_or_credit",
+export const Type_sale = sequelize.define(
+  "type_sale",
   {
     id: {
       type: DataTypes.INTEGER,

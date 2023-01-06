@@ -12,6 +12,8 @@ export const getRoles = async (req, res) => {
 export const createRole = async (req, res) => {
   try {
     const { name } = req.body;
+    if (!name)
+      return res.status(404).json({ message: "Role name is required" });
     const newRole = await Role.create({ name });
     res
       .status(201)
