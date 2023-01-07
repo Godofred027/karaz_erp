@@ -135,12 +135,12 @@ Document_investor.belongsTo(Investor, {
 });
 
 // document_selles relation
-Sale.hasMany(Document_selles, {
-  foreignKey: "sale_id",
+Seller.hasMany(Document_selles, {
+  foreignKey: "seller_id",
   sourceKey: "id",
 });
-Document_selles.belongsTo(Sale, {
-  foreignKey: "sale_id",
+Document_selles.belongsTo(Seller, {
+  foreignKey: "seller_id",
   targetId: "id",
 });
 

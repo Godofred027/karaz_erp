@@ -13,11 +13,23 @@ import rolesRouter from "./routes/roles.routes.js";
 import usersRouter from "./routes/users.routes.js";
 import documentsRouter from "./routes/documents.routes.js";
 import authRouter from "./routes/auth.routes.js";
-//routes not tested
 import documentEnvoiceRouter from "./routes/documentsEnvoices.routes.js";
 import bankRouter from "./routes/banks.routes.js";
 import billsRouter from "./routes/bills.routes.js";
 import clientRouter from "./routes/clients.routes.js";
+import statesInvestorsRouter from "./routes/statesInvestors.routes.js";
+import statesPaidSellersRouter from "./routes/statesPaidSellers.routes.js";
+import statesProjectsRouter from "./routes/statesProjects.routes.js";
+import typesEnvoicesRouter from "./routes/typesEnvoices.routes.js";
+import typesSalesRouter from "./routes/typesSales.routes.js";
+import typesSellersRouter from "./routes/typesSellers.routes.js";
+//routes not tested
+import documentInvestorRouter from "./routes/documentsInvestors.routes.js";
+import documentProjectRouter from "./routes/documentsProjects.routes.js";
+import documentSalesRouter from "./routes/documentsSales.routes.js";
+import documentSellerRouter from "./routes/documentsSalles.routes.js";
+import voucherSalesRouter from "./routes/vouchersSales.routes.js";
+import voucherSellerRouter from "./routes/vouchersSellers.routes.js";
 
 const app = express();
 
@@ -72,6 +84,24 @@ app.use(`/api/${config.API_VERSION}/banks`, bankRouter);
 app.use(`/api/${config.API_VERSION}/documentsEnvoices`, documentEnvoiceRouter);
 app.use(`/api/${config.API_VERSION}/bills`, billsRouter);
 app.use(`/api/${config.API_VERSION}/clients`, clientRouter);
+app.use(`/api/${config.API_VERSION}/statesInvestors`, statesInvestorsRouter);
+app.use(
+  `/api/${config.API_VERSION}/statesPaidSellers`,
+  statesPaidSellersRouter
+);
+app.use(`/api/${config.API_VERSION}/statesProjects`, statesProjectsRouter);
+app.use(`/api/${config.API_VERSION}/typesEnvoices`, typesEnvoicesRouter);
+app.use(`/api/${config.API_VERSION}/typesSales`, typesSalesRouter);
+app.use(`/api/${config.API_VERSION}/typesSellers`, typesSellersRouter);
+app.use(
+  `/api/${config.API_VERSION}/documentsInvestors`,
+  documentInvestorRouter
+);
+app.use(`/api/${config.API_VERSION}/documentsProjects`, documentProjectRouter);
+app.use(`/api/${config.API_VERSION}/documentsSales`, documentSalesRouter);
+app.use(`/api/${config.API_VERSION}/documentsSellers`, documentSellerRouter);
+app.use(`/api/${config.API_VERSION}/vouchersSales`, voucherSalesRouter);
+app.use(`/api/${config.API_VERSION}/vouchersSellers`, voucherSellerRouter);
 
 //public files
 app.use("/public", express.static(join(__filename, "/uploads")));
