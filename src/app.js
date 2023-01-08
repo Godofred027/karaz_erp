@@ -23,13 +23,13 @@ import statesProjectsRouter from "./routes/statesProjects.routes.js";
 import typesEnvoicesRouter from "./routes/typesEnvoices.routes.js";
 import typesSalesRouter from "./routes/typesSales.routes.js";
 import typesSellersRouter from "./routes/typesSellers.routes.js";
-//routes not tested
 import documentInvestorRouter from "./routes/documentsInvestors.routes.js";
 import documentProjectRouter from "./routes/documentsProjects.routes.js";
 import documentSalesRouter from "./routes/documentsSales.routes.js";
 import documentSellerRouter from "./routes/documentsSalles.routes.js";
 import voucherSalesRouter from "./routes/vouchersSales.routes.js";
 import voucherSellerRouter from "./routes/vouchersSellers.routes.js";
+//routes not tested
 
 const app = express();
 
@@ -107,5 +107,3 @@ app.use(`/api/${config.API_VERSION}/vouchersSellers`, voucherSellerRouter);
 app.use("/public", express.static(join(__filename, "/uploads")));
 //export
 export default app;
-
-//test runner 2
