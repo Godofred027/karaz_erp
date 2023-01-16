@@ -3,24 +3,28 @@ import { comparePassword } from "../libs/passEncrypt.js";
 import { generateToken, generateRefreshToken } from "../utils/tokenManager.js";
 
 export const login = async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({ where: { username } });
-  if (!user) {
-    return res.status(404).send({ message: "User Not found." });
-  }
-  const passwordIsValid = comparePassword(password, user.password);
-  if (!passwordIsValid) {
-    return res.status(401).send({
-      accessToken: null,
-      message: "Invalid Password!",
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ where: { username } });
+    if (!user) {
+      return res.status(404).send({ message: "User Not found." });
+    }
+    const passwordIsValid = comparePassword(password, user.password);
+    if (!passwordIsValid) {
+      return res.status(401).send({
+        accessToken: null,
+        message: "Invalid Password!",
+      });
+    }
+    const { token, expiresIn } = generateToken(user.id);
+    generateRefreshToken(user.id, res);
+    res.status(200).send({
+      accessToken: token,
+      expiresIn,
     });
+  } catch (error) {
+    res.status(500).json({ message: error });
   }
-  const { token, expiresIn } = generateToken(user.id);
-  generateRefreshToken(user.id, res);
-  res.status(200).send({
-    accessToken: token,
-    expiresIn,
-  });
 };
 
 export const getInfo = async (req, res) => {
