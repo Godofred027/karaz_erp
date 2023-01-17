@@ -34,8 +34,8 @@ export default {
   //enviroment
   IS_DEV: process.env.IS_DEV,
   //frontend urls
-  FRONTEND_URL_1: process.env.FRONTEND_URL_1,
-  FRONTEND_URL_2: process.env.FRONTEND_URL_2,
-  FRONTEND_URL_3: process.env.FRONTEND_URL_3,
-  FRONTEND_URL_4: process.env.FRONTEND_URL_4,
+  FRONTEND_URL_1: "https://erp.aibrkaraz.com",
+  FRONTEND_URL_2: "http://erp.aibrkaraz.com",
+  FRONTEND_URL_3: "http://localhost:3000",
+  FRONTEND_URL_4: "129.151.111.184",
 };
