@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { tokenVerificationErrors } from "../utils/tokenManager.js";
-import config from "../config/auth.config.js";
+import config from "../config.js";
 
 export const requireRefreshToken = async (req, res, next) => {
   try {
